@@ -1,0 +1,33 @@
+<div id="results" class="row-fluid">
+      
+      <div class="span10 well">
+      <h3>Search Results</h3>
+      <hr />
+      <ul>
+        [% FOREACH i IN results %]
+        <li>
+          <form class="form-inline">
+            <p>[% i.title %]</p>
+            <label for="rating[% i.id %]">Rating</label>
+            <select id="rating[% i.id %]" class="span1">
+                <option value=''></option>
+                <option value='5' [% IF i.rating == 5 %]selected[% END %]>5</option>
+                <option value='4' [% IF i.rating == 4 %]selected[% END %]>4</option>
+                <option value='3' [% IF i.rating == 3 %]selected[% END %]>3</option>
+                <option value='2' [% IF i.rating == 2 %]selected[% END %]>2</option>
+                <option value='1' [% IF i.rating == 1 %]selected[% END %]>1</option>
+            </select>
+            <label for="watched[% i.id %]" class="checkbox">
+              <input id="watched[% i.id %]" type="checkbox" [% IF i.watched == 'true' %]checked="checked"[% END %]> Watched
+            </label>
+            <label for="owned[% i.id %]" class="checkbox">
+              <input id="owned[% i.id %]" type="checkbox" [% IF i.owned == 'true' %]checked="checked"[% END %]> Owned
+            </label>
+            <button id="add_film[% i.id %]" class="btn btn-mini btn-primary add_film_btn" type="button">Save</button>
+          </form>
+        </li>
+        [% END %]
+      </ul>
+      </div>
+
+</div>
