@@ -27,5 +27,12 @@ engines:
     WRAPPER: main.tt
     start_tag: '[%'
     end_tag:   '%]'
+    
+plugins:
+  DBIC:
+    default:
+      default:
+        dsn: dbi:SQLite:dbname=lisaweb
+        schema_class: 'Database::Schema'
 
 
